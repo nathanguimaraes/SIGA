@@ -23,14 +23,16 @@ import Sidebar from './components/Sidebar.vue'
     --sidebar-width: 300px;
 }
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Fira sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira sans', sans-serif;
 }
+
 body {
-background: var(--light);
+    background: var(--light);
 }
+
 button {
   cursor: pointer;
   appearance: none;
@@ -38,11 +40,13 @@ button {
   outline: none;
   background: none;
 }
+
 .app {
-display: flex;
+  display: flex;
+    
   main {
-    flex: 1 1 0;
-    padding: 2rem;
+      flex: 1 1 0;
+      padding: 2rem;
     
       @media (max-width: 768px) {
         padding-left: 6rem;
