@@ -1,0 +1,18 @@
+{
+    "shor_name": "siga",
+    "name": "Sistema de Inspensão Geográfica Agrícola",
+    "start_url": ".",
+    "display": "standalone",
+    "theme-color": "#fffff",
+    "theme_color": "#fffff",
+    "background-color": "#000000",
+    "background_color": "#000000",
+    "description": "my description",
+    "icons": [
+        {
+            "src": "assets/logo.png",
+            "type": "image/png",
+            "size":"2560x2560"
+        } 
+    ]
+}

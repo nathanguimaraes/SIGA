@@ -34,35 +34,44 @@
                     </li>
 
                     <li class="nav-link">
-                        <router-link to="/about" class="button">
+                        <router-link to="/produtor" class="button">
+                            <i class='bx bx-user icon' ></i>
+                            <span class="text nav-text">Produtor</span>
+                        </router-link>
+                    </li>
+
+
+
+                    <li class="nav-link">
+                        <router-link to="/relatorio" class="button">
                             <i class='bx bx-bar-chart-alt-2 icon' ></i>
                             <span class="text nav-text">Relatorio</span>
 						</router-link>
                     </li>
 
                     <li class="nav-link">
-                        <router-link to="" class="button">
+                        <router-link to="/notificacoes" class="button">
                             <i class='bx bx-bell icon'></i>
                             <span class="text nav-text">Notificações</span>
 						</router-link>
                     </li>
 
                     <li class="nav-link">
-                        <router-link to="" class="button">
+                        <router-link to="/analises" class="button">
                             <i class='bx bx-pie-chart-alt icon' ></i>
                             <span class="text nav-text">Análises</span>
 						</router-link>
                     </li>
 
                     <li class="nav-link">
-                        <router-link to="" class="button">
+                        <router-link to="/configuracoes" class="button">
                             <i class='bx bx-cog icon' ></i>
                             <span class="text nav-text">Configurações</span>
 						</router-link>
                     </li>
 
                     <li class="nav-link">
-                        <router-link to="" class="button">
+                        <router-link to="/about" class="button">
 							<i class='bx bx-group icon'></i>
                             <span class="text nav-text">Sobre Nós</span>
 						</router-link>
