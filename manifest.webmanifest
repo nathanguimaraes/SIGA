@@ -10,7 +10,7 @@
     "description": "my description",
     "icons": [
         {
-            "src": "assets/logo.png",
+            "src": "./src/assets/logo.png",
             "type": "image/png",
             "sizes":"2560x2560"
         } 
