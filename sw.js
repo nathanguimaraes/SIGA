@@ -6,20 +6,20 @@ self.addEventListener('install', function(event) {
     event.waitUntil(
         caches.open(CACHE_STATIC_NAME)
         .then(function(cache){
-            console.logo('Precaching App Shell');
+            console.log('Precaching App Shell');
             cache.addAll([
-                './src/components/Sidebar.vue',
-                './src/router/index.js',
-                './src/scripts/sidebar.js',
-                './src/styles/sidebar.css',
-                './src/views/About.vue',
-                './src/views/Analises.vue',
-                './src/views/Home.vue',
-                './src/views/Notificacoes.vue',
-                './src/views/Produtor.vue',
-                './src/views/Relatorio.vue',
-                './src/App.vue',
-                './src/main.js',
+                '/src/components/Sidebar.vue',
+                '/src/router/index.js',
+                '/src/scripts/sidebar.js',
+                '/src/styles/sidebar.css',
+                '/src/views/About.vue',
+                '/src/views/Analises.vue',
+                '/src/views/Home.vue',
+                '/src/views/Notificacoes.vue',
+                '/src/views/Produtor.vue',
+                '/src/views/Relatorio.vue',
+                '/src/App.vue',
+                '/src/main.js',
                 '/index.html',
                 '/index.js'
 

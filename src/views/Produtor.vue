@@ -103,7 +103,7 @@
       position: relative;
       max-width: 700px;
       width: 100%;
-      background: #fff;
+      background:var(--box-color);
       padding: 40px;
       border-radius: 8px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -123,7 +123,7 @@
       margin-top: 20px;
     }
     .input-box label {
-      color: #333;
+      color: var(--font-color);
     }
     .form :where(.input-box input, .select-box) {
       position: relative;
@@ -169,7 +169,7 @@
       cursor: pointer;
     }
     .gender label {
-      color: #707070;
+      color: var(--font-color);
     }
     .address :where(input, .select-box) {
       margin-top: 15px;
