@@ -9,34 +9,74 @@
           <header>Informações da Lavoura</header>
           <form action="#" class="form">
             <div class="column">
-            <div class="input-box">
-                <label>Data da Vistoria</label>
-                <input type="date" placeholder="" required />
+              <div class="input-box">
+                  <label>Data da Vistoria</label>
+                  <input type="date" placeholder="" required />
               </div>
     
-            <div class="input-box">
-                <label for="cultura">Cultura:</label>
+              <div class="input-box">
+                  <label for="cultura">Cultura:</label>
                                     <select name="Culturas" id="cultura" class="input-box cultura">
                                         <option value="Milho">Milho</option>
                                         <option value="Soja">Soja</option>
                                         <option value="Aveia">Aveia</option>
                                         <option value="Trigo">Trigo</option>
                                     </select>
-            </div>
+              </div>
 
-            <div class="input-box">
-                <label>Data Inicio do Plantio</label>
-                <input type="date" placeholder="" required />
+              <div class="input-box">
+                  <label>Data Inicio do Plantio</label>
+                  <input type="date" placeholder="" required />
               </div>
 
               <div class="input-box">
                 <label>Data Final do Platio</label>
                 <input type="date" placeholder="" required />
               </div>
-    
-           
-
+              
             </div>
+
+            <div class="column">
+                  <div class="input-box">
+                    <label for="nome"><b>Nome da Variedade:</b></label>
+                    <input id="nome" name="Nome" type="text" class="form-control" placeholder="Nome da Variedade">
+                  </div>
+
+                  <div class="input-box">
+                    <label for="estandepopulacao"><b>Estande/População:</b></label>
+                    <textarea id="estandepopulacao" name="estande_populacao" rows="4" cols="50" class="form-control"></textarea>
+                  </div>
+            </div>
+
+                  <div class="input-box">
+                    <label for="fasecultura"><b>Fase da Cultura:</b></label>
+                    <textarea id="faseCultura" name="fase_cultura" rows="4" cols="50" class="form-control" placeholder="Em qual fase a cultura se encontra"></textarea>
+                  </div>
+            
+
+            
+
+                  <label for="pragas"><b>Pragas:</b></label>
+                  <textarea id="pragas" name="pragas" rows="4" cols="50" class="form-control" placeholder="Informações de pragas na lavoura"></textarea>
+
+              
+
+                  <label for="doencas"><b>Doenças:</b></label>
+               <textarea id="doencas" name="doencas" rows="4" cols="50" class="form-control" placeholder="Informações de doenças na lavoura"></textarea>
+            
+              
+
+             <label for="PlantasDaninha"><b>Plantas Daninhas:</b></label>
+                            <textarea id="plantasdaninha" name="plantas_daninha" rows="4" cols="50" class="form-control" placeholder="Informações de plantas da ninha na lavoura"></textarea>
+
+                            
+                         
+                            <br>
+
+                            <label for="outrasinformacoes"><b>Outras Informações:</b></label>
+                            <textarea id="outrasinformacoes" name="outras_informacoes" rows="4" cols="50" class="form-control" placeholder="Informações adicionais"></textarea>
+
+                            <br>
 
 
             <!----        <div class="input-box address">
@@ -86,8 +126,8 @@
     
     .container {
       position: relative;
-      max-width: 100%;
-      width: 100%;
+      max-width: 95%;
+      width: 95%;
       background:var(--box-color);
       padding: 40px;
       border-radius: 8px;
@@ -111,7 +151,7 @@
       color: var(--font-color);
     }
 
-    .form :where(.input-box input, .select-box, .cultura) {
+    .form :where(.input-box input, .select-box, .cultura, .form-control) {
       position: relative;
       height: 50px;
       width: 100%;
@@ -185,7 +225,7 @@
       background: rgb(88, 56, 250);
     }
     /*Responsive*/
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 900px) {
       .form .column {
         flex-wrap: wrap;
       }
