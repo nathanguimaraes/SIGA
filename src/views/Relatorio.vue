@@ -23,7 +23,8 @@
                                         <option value="Trigo">Trigo</option>
                                     </select>
               </div>
-
+            </div>
+              <div class="colunm">
               <div class="input-box">
                   <label>Data Inicio do Plantio</label>
                   <input type="date" placeholder="" required />
@@ -101,8 +102,13 @@
               </div>
             </div>
             -->
-    
-            <button>Salvar</button>
+            <button class="add-img">Adicionar Imagens</button>
+            <div class="input-box">
+            <button class="clean">Limpar</button>
+
+            <button class="save">Imprimir</button>
+
+          </div>
           </form>
         </section>
         </main>
@@ -127,7 +133,7 @@
     .container {
       position: relative;
       max-width: 95%;
-      width: 95%;
+      width: 75%;
       background:var(--box-color);
       padding: 40px;
       border-radius: 8px;
@@ -211,7 +217,7 @@
     }
     .form button {
       height: 55px;
-      width: 100%;
+      width: 25%;
       color: #fff;
       font-size: 1rem;
       font-weight: 400;
@@ -219,6 +225,18 @@
       border: none;
       cursor: pointer;
       transition: all 0.2s ease;
+      border-radius: 10px;
+    }
+    .form button.add-img{
+      background: #eede03;
+    }
+    .form button.clean {
+
+      background: #ac2020;
+    }
+
+    .form button.save {
+      margin-left: 5%;
       background: var(--primary-color);
     }
     .form button:hover {
