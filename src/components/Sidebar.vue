@@ -40,6 +40,13 @@
                         </router-link>
                     </li>
 
+                    <li class="nav-link">
+                        <router-link to="/imagens" class="button">
+                            <i class='bx bx-images icon' ></i>
+                            <span class="text nav-text">Visualizador</span>
+                        </router-link>
+                    </li>
+
 
 
                     <li class="nav-link">

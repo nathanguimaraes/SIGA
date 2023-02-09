@@ -13,3 +13,4 @@ async function registerSW(){
         }
     }
 }
+

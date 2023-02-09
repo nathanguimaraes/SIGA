@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
+    "@volar-plugins/vetur": "latest",
     "sass": "^1.57.1",
     "vite": "^4.0.0"
     

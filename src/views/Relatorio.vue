@@ -102,7 +102,12 @@
               </div>
             </div>
             -->
-            <button class="add-img">Adicionar Imagens</button>
+            
+
+
+
+            <button class="add-img" for="camera">Adicionar Imagens</button>
+           
             <div class="input-box">
             <button class="clean">Limpar</button>
 
