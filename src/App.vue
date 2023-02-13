@@ -10,7 +10,11 @@
 </template>
 
 <script setup>
-import Sidebar from './components/Sidebar.vue'
+import Sidebar from './components/Sidebar.vue';
+
+import Produtor from './views/Produtor.vue';
+import Imagens from './views/Imagens.vue';
+
 </script>
 
 <style lang="scss">

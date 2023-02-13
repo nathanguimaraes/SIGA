@@ -137,7 +137,7 @@ header .image-text .profession{
     transform: translateY(-50%) rotate(180deg);
     height: 50px;
     width: 50px;
-    background-color: #f0e006;
+    background-color: #ffbb00;
     color: var(--sidebar-color);
     border-radius: 50%;
     display: flex;
@@ -196,6 +196,9 @@ body.dark .sidebar header .toggle{
 .sidebar li a:hover{
     background-color: var(--primary-color);
 }
+.toggle a:hover{
+    font-size: 50px;
+}
 .sidebar li a:hover .icon,
 .sidebar li a:hover .text{
     color: var(--sidebar-color);
@@ -203,6 +206,9 @@ body.dark .sidebar header .toggle{
 body.dark .sidebar li a:hover .icon,
 body.dark .sidebar li a:hover .text{
     color: var(--text-color);
+}
+body.dark .sidebar header .toggle{
+    color: #18191a;
 }
 
 .sidebar .menu-bar{

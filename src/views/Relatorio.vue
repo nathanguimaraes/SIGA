@@ -10,12 +10,12 @@
           <form action="#" class="form">
             <div class="column">
               <div class="input-box">
-                  <label>Data da Vistoria</label>
+                  <label class="txt">Data da Vistoria</label>
                   <input type="date" placeholder="" required />
               </div>
     
               <div class="input-box">
-                  <label for="cultura">Cultura:</label>
+                  <label for="cultura" class="txt">Cultura:</label>
                                     <select name="Culturas" id="cultura" class="input-box cultura">
                                         <option value="Milho">Milho</option>
                                         <option value="Soja">Soja</option>
@@ -26,12 +26,12 @@
             </div>
               <div class="colunm">
               <div class="input-box">
-                  <label>Data Inicio do Plantio</label>
+                  <label class="txt">Data Inicio do Plantio</label>
                   <input type="date" placeholder="" required />
               </div>
 
               <div class="input-box">
-                <label>Data Final do Platio</label>
+                <label class="txt">Data Final do Platio</label>
                 <input type="date" placeholder="" required />
               </div>
               
@@ -39,42 +39,42 @@
 
             <div class="column">
                   <div class="input-box">
-                    <label for="nome"><b>Nome da Variedade:</b></label>
+                    <label for="nome" class="txt"><b>Nome da Variedade:</b></label>
                     <input id="nome" name="Nome" type="text" class="form-control" placeholder="Nome da Variedade">
                   </div>
 
                   <div class="input-box">
-                    <label for="estandepopulacao"><b>Estande/População:</b></label>
+                    <label for="estandepopulacao" class="txt"><b>Estande/População:</b></label>
                     <textarea id="estandepopulacao" name="estande_populacao" rows="4" cols="50" class="form-control"></textarea>
                   </div>
             </div>
 
                   <div class="input-box">
-                    <label for="fasecultura"><b>Fase da Cultura:</b></label>
+                    <label for="fasecultura" class="txt"><b>Fase da Cultura:</b></label>
                     <textarea id="faseCultura" name="fase_cultura" rows="4" cols="50" class="form-control" placeholder="Em qual fase a cultura se encontra"></textarea>
                   </div>
             
 
             
 
-                  <label for="pragas"><b>Pragas:</b></label>
+                  <label for="pragas" class="txt"><b>Pragas:</b></label>
                   <textarea id="pragas" name="pragas" rows="4" cols="50" class="form-control" placeholder="Informações de pragas na lavoura"></textarea>
 
               
 
-                  <label for="doencas"><b>Doenças:</b></label>
+                  <label for="doencas" class="txt"><b>Doenças:</b></label>
                <textarea id="doencas" name="doencas" rows="4" cols="50" class="form-control" placeholder="Informações de doenças na lavoura"></textarea>
             
               
 
-             <label for="PlantasDaninha"><b>Plantas Daninhas:</b></label>
+             <label for="PlantasDaninha" class="txt"><b>Plantas Daninhas:</b></label>
                             <textarea id="plantasdaninha" name="plantas_daninha" rows="4" cols="50" class="form-control" placeholder="Informações de plantas da ninha na lavoura"></textarea>
 
                             
                          
                             <br>
 
-                            <label for="outrasinformacoes"><b>Outras Informações:</b></label>
+                            <label for="outrasinformacoes" class="txt"><b>Outras Informações:</b></label>
                             <textarea id="outrasinformacoes" name="outras_informacoes" rows="4" cols="50" class="form-control" placeholder="Informações adicionais"></textarea>
 
                             <br>
@@ -103,12 +103,16 @@
             </div>
             -->
             
-
-
-
-            <button class="add-img" for="camera">Adicionar Imagens</button>
+            
+            <br>
+            <div class="add-img-box">
+              <label id="teste" for="camera" class="add-img ">Adicionar Imagem</label>
+                            <input id="camera" type="file" for="camera" accept="image/*" style="display: none;">
+            </div>
            
             <div class="input-box">
+              
+              
             <button class="clean">Limpar</button>
 
             <button class="save">Imprimir</button>
@@ -119,8 +123,7 @@
         </main>
     </template>
     
-    
-    
+
     <style scoped>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
     
@@ -130,7 +133,8 @@
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;
         text-align: center;
-        color:var(--text-color);
+        font-weight: normal;
+     
         
         
         }
@@ -158,9 +162,7 @@
       width: 100%;
       margin-top: 8px;
     }
-    .input-box label {
-      color: var(--font-color);
-    }
+
 
     .form :where(.input-box input, .select-box, .cultura, .form-control) {
       position: relative;
@@ -168,7 +170,7 @@
       width: 100%;
       outline: none;
       font-size: 1rem;
-      color: #707070;
+      color: #424242;
       margin-top: 8px;
       border: 1px solid #ddd;
       border-radius: 6px;
@@ -185,12 +187,7 @@
     .form .gender-box {
       margin-top: 20px;
     }
-    .gender-box h3 {
-      color: #333;
-      font-size: 1rem;
-      font-weight: 400;
-      margin-bottom: 8px;
-    }
+ 
     .form :where(.gender-option, .gender) {
       display: flex;
       align-items: center;
@@ -200,29 +197,16 @@
     .form .gender {
       column-gap: 5px;
     }
-    .gender input {
-      accent-color: rgb(29, 179, 9);
-    }
+
     .form :where(.gender input, .gender label) {
       cursor: pointer;
     }
-    .gender label {
-      color: var(--font-color);
-    }
-    .address :where(input, .select-box) {
-      margin-top: 15px;
-    }
-    .select-box select {
-      height: 100%;
-      width: 100%;
-      outline: none;
-      border: none;
-      color: #707070;
-      font-size: 1rem;
-    }
+
+
+
     .form button {
       height: 55px;
-      width: 25%;
+      width: 35%;
       color: #fff;
       font-size: 1rem;
       font-weight: 400;
@@ -232,12 +216,38 @@
       transition: all 0.2s ease;
       border-radius: 10px;
     }
-    .form button.add-img{
-      background: #eede03;
+
+    .add-img-box{
+      height: 35px;
+      width: 50%;
+      color: #fff;
+      font-size: 20px;
+
+      margin-left: 26%;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 10px;
+
     }
+    #teste.add-img{
+      margin-left: 0%;
+
+    }
+
+
     .form button.clean {
 
       background: #ac2020;
+    }
+
+    .add-img-box{
+      background: #ffbb00;
+    }
+    .add-img-box:hover {
+      background: #0039d6;
+      height: 40px;
+
     }
 
     .form button.save {
@@ -245,7 +255,7 @@
       background: var(--primary-color);
     }
     .form button:hover {
-      background: rgb(88, 56, 250);
+      background: rgb(12, 11, 12);
     }
     /*Responsive*/
     @media screen and (max-width: 900px) {
@@ -255,6 +265,16 @@
       .form :where(.gender-option, .gender) {
         row-gap: 15px;
       }
+    }
+
+    @media screen and (max-width: 604px) {
+      .add-img-box{
+        height: 30px;
+        font-size: 15px;
+  
+      }
+
+
     }
     
     
