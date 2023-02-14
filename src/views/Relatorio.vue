@@ -300,6 +300,14 @@ export default {
         font-size: 15px;
   
       }
+     
+      @media screen and (max-width: 479px) {
+      .add-img-box{
+        height: 60px;
+        font-size: 15px;
+  
+      } 
+    }
 
 
     }
