@@ -107,8 +107,13 @@
             <br>
             <div class="add-img-box">
               <label id="teste" for="camera" class="add-img ">Adicionar Imagem</label>
-                            <input id="camera" type="file" for="camera" accept="image/*" style="display: none;">
-            </div>
+                            
+                         
+                            <input id="camera" type="file" for="camera" accept="image/*" @change="onChange" style="display: none;"/>
+  <div id="preview">
+    <img v-if="item.imageUrl" :src="item.imageUrl" />
+  </div>
+                          </div>
            
             <div class="input-box">
               
@@ -120,9 +125,31 @@
           </div>
           </form>
         </section>
+
         </main>
     </template>
-    
+<script>
+export default {
+  name: 'imageUpload',
+  data() {
+    return {
+      item:{
+          //...
+          image : null,
+          imageUrl: null
+      }
+    }
+  },
+  methods: {
+    onChange(e) {
+      const file = e.target.files[0]
+      this.image = file
+      this.item.imageUrl = URL.createObjectURL(file)
+    }
+  }
+} 
+</script>
+
 
     <style scoped>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');

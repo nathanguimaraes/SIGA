@@ -1,54 +1,30 @@
-
 <template>
-<div>
-   <div class="imagePreviewWrapper" style="{'background-image': `url(${previewImage})`}" @click="selectImage"></div>
-      <input type="file" ref="fileInput" @input="pickFile">
-</div>
+  <input type="file" accept="image/*" @change="onChange" />
+  <div id="preview">
+    <img v-if="item.imageUrl" :src="item.imageUrl" />
+  </div>
+</template>
 
-  </template>
 
 <script>
 export default {
-  data(){
-    return{
-      previewImage:null
-    };
-      
+  name: 'imageUpload',
+  data() {
+    return {
+      item:{
+          //...
+          image : null,
+          imageUrl: null
+      }
+    }
   },
   methods: {
-    selectImage(){
-      this.$refs.fileInput.click()
-    },
-      pickFile () {
-        let input = this.$refs.fileInput
-        let file = input.files
-
-        if(file && file[0]){
-          let reader = new FileReader
-          reader.onload = e => {
-            this.previewImage = e.target.result
-          }
-          reader.readAsDataURL(file[0])
-          this.$emit('input', file[0])
-        }
-
-      }
+    onChange(e) {
+      const file = e.target.files[0]
+      this.image = file
+      this.item.imageUrl = URL.createObjectURL(file)
+    }
   }
-}
-
-
+} 
 </script>
 
-<style scoped>
-
-.imagePreviewWrapper {
-  width: 250px;
-  height: 250px;
-  display: block;
-  cursor: pointer;
-  margin: 0 auto 30px;
-  background-size: cover;
-  background-position: center center;
-}
-
-</style>
