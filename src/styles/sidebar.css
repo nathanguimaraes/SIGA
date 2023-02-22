@@ -46,6 +46,7 @@ body.dark{
 }
 .sidebar.close{
     width: 0px;
+    margin-left: -7%;
     
 }
 .sidebar.close header .image img{
@@ -129,11 +130,12 @@ header .image-text .profession{
     width: 70px;
     border-radius: 6px;
 }
-
+.sidebar.close header .toggle{
+margin-left: 150px;
+}
 .sidebar header .toggle{
-    position: absolute;
-    top: 130%;
-    right: -30px;
+    /*position: absolute;*/
+    /*top: 50%;*/
     transform: translateY(-50%) rotate(180deg);
     height: 50px;
     width: 50px;
@@ -146,6 +148,8 @@ header .image-text .profession{
     font-size: 40px;
     cursor: pointer;
     transition: var(--tran-05);
+    margin-left: 80%;
+    margin-top: -12%;
 }
 
 body.dark .sidebar header .toggle{
@@ -154,11 +158,11 @@ body.dark .sidebar header .toggle{
 
 .sidebar.close .toggle{
     transform: translateY(-50%) rotate(0deg);
-    right: -50px;
+    right: -150px;
 }
 
 .sidebar .menu{
-    margin-top: 40px;
+    margin-top: -10px;
 }
 
 .sidebar li.search-box{
@@ -212,11 +216,13 @@ body.dark .sidebar header .toggle{
 }
 
 .sidebar .menu-bar{
-    height: calc(100% - 55px);
+    height: calc(98% - 55px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow-y: scroll;
+    overflow: scroll;
+    margin-top: -10px;
+    
 }
 .menu-bar::-webkit-scrollbar{
     display: none;
@@ -227,6 +233,7 @@ body.dark .sidebar header .toggle{
     position: relative;
     transition: var(--tran-05);
 }
+
 
 .menu-bar .mode .sun-moon{
     height: 50px;
@@ -273,7 +280,7 @@ body.dark .mode .sun-moon i.moon{
     width: 15px;
     border-radius: 50%;
     top: 50%;
-    left: 5px;
+    left: 10px;
     transform: translateY(-50%);
     background-color: var(--sidebar-color);
     transition: var(--tran-04);
@@ -300,8 +307,8 @@ body.dark .switch::before{
     padding: 12px 60px;
 }
 
-.sidebar.close ~ .home{
-    left: 78px;
+.sidebar.close  .home{
+    
     height: 100vh;
     width: calc(100% - 78px);
 }
@@ -309,3 +316,35 @@ body.dark .home .text{
     color: var(--text-color);
 }
 
+@media screen and (min-width: 340px) {
+    .sidebar.close header .toggle {
+        margin-left: 21px;
+        margin-top: 65px;
+      }
+    }
+@media screen and (min-width: 570px) {
+        .sidebar.close header .toggle {
+            margin-left: 45px;
+            margin-top: 65px;
+          }
+        }
+@media screen and (min-width: 690px) {
+            .sidebar.close header .toggle {
+                margin-left: 65px;
+                margin-top: 65px;
+              }
+            }
+
+@media screen and (min-width: 940px) {
+                .sidebar.close header .toggle {
+                    margin-left: 95px;
+                    margin-top: 65px;
+                  }
+                }  
+                
+@media screen and (min-width: 1400px) {
+                    .sidebar.close header .toggle {
+                        margin-left: 135px;
+                        margin-top: 65px;
+                      }
+                    }                   
