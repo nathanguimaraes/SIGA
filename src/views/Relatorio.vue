@@ -2,7 +2,7 @@
     <head>
         
     </head>
-        <main class="home-page">
+        <main class="relatorio-page">
             
            
               <h1>Sistema  de Inspeção Geográfica Agrícola</h1>
@@ -12,34 +12,34 @@
           <form action="#" class="form">
             <div class="input-box">
               <label>Nome Completo</label>
-              <input type="text" placeholder="Insira o Nome Completo" required />
+              <input type="text"  id="Nome" v-model="nome" placeholder="Insira o Nome Completo" required />
             </div>
     
             <div class="input-box">
               <label>CPF do Produtor</label>
-              <input type="text" placeholder="Insira o Nome Completo" required />
+              <input type="text"  id="cpf" v-model="cpf" placeholder="Insira o Nome Completo" required />
             </div>
     
             <div class="input-box">
               <label>Email</label>
-              <input type="text" placeholder="exemplo@email.com" required />
+              <input type="text" id="email" v-model="email" placeholder="exemplo@email.com" required />
             </div>
     
             <div class="column">
               <div class="input-box">
                 <label>Telefone Celular</label>
-                <input type="text" placeholder="000 00000 0000" required />
+                <input type="text" id="telefone" v-model="telefone" placeholder="000 00000 0000" required />
               </div>
               <div class="input-box">
                 <label>Data de Nascimento</label>
-                <input type="date" placeholder="Enter birth date" required />
+                <input type="date" id="dtnascimento" v-model="dtnascimento" placeholder="Enter birth date" required />
               </div>
             </div>
             <div class="gender-box">
               <h3>Genero</h3>
               <div class="gender-option">
                 <div class="gender">
-                  <input type="radio" id="check-male" name="gender" checked />
+                  <input type="radio" id="check-male"  name="gender" checked />
                   <label for="check-male">Masculino</label>
                 </div>
                 <div class="gender">
@@ -63,7 +63,7 @@
             <div class="column">
               <div class="input-box">
                   <label class="txt">Data da Vistoria</label>
-                  <input type="date" placeholder="" required />
+                  <input id="datavist" type="date" v-model="dtvistoria" placeholder="" required />
               </div>
     
               <div class="input-box">
@@ -79,12 +79,12 @@
               <div class="colunm">
               <div class="input-box">
                   <label class="txt">Data Inicio do Plantio</label>
-                  <input type="date" placeholder="" required />
+                  <input id="datainiplant" v-model="dtiniplant" type="date" placeholder="" required />
               </div>
 
               <div class="input-box">
                 <label class="txt">Data Final do Platio</label>
-                <input type="date" placeholder="" required />
+                <input id="datafimplant" v-model="dtfimplant" type="date" placeholder="" required />
               </div>
               
             </div>
@@ -92,42 +92,42 @@
             <div class="column">
                   <div class="input-box">
                     <label for="nome" class="txt"><b>Nome da Variedade:</b></label>
-                    <input id="nome" name="Nome" type="text" class="form-control" placeholder="Nome da Variedade">
+                    <input id="nome" name="Nome" type="text" class="form-control" placeholder="Nome da Variedade" v-model="nomevariedade">
                   </div>
 
                   <div class="input-box">
                     <label for="estandepopulacao" class="txt"><b>Estande/População:</b></label>
-                    <textarea id="estandepopulacao" name="estande_populacao" rows="4" cols="50" class="form-control"></textarea>
+                    <textarea id="estandepopulacao" name="estande_populacao" rows="4" cols="50" class="form-control" v-model="estanpopulacao"></textarea>
                   </div>
             </div>
 
                   <div class="input-box">
                     <label for="fasecultura" class="txt"><b>Fase da Cultura:</b></label>
-                    <textarea id="faseCultura" name="fase_cultura" rows="4" cols="50" class="form-control" placeholder="Em qual fase a cultura se encontra"></textarea>
+                    <textarea id="faseCultura" name="fase_cultura" rows="4" cols="50" class="form-control" placeholder="Em qual fase a cultura se encontra" v-model="fasecultura"></textarea>
                   </div>
             
 
             
 
                   <label for="pragas" class="txt"><b>Pragas:</b></label>
-                  <textarea id="pragas" name="pragas" rows="4" cols="50" class="form-control" placeholder="Informações de pragas na lavoura"></textarea>
+                  <textarea id="pragas" name="pragas" rows="4" cols="50" class="form-control" placeholder="Informações de pragas na lavoura" v-model="infopraga"></textarea>
 
               
 
                   <label for="doencas" class="txt"><b>Doenças:</b></label>
-               <textarea id="doencas" name="doencas" rows="4" cols="50" class="form-control" placeholder="Informações de doenças na lavoura"></textarea>
+               <textarea id="doencas" name="doencas" rows="4" cols="50" class="form-control" placeholder="Informações de doenças na lavoura" v-model="doencas"></textarea>
             
               
 
              <label for="PlantasDaninha" class="txt"><b>Plantas Daninhas:</b></label>
-                            <textarea id="plantasdaninha" name="plantas_daninha" rows="4" cols="50" class="form-control" placeholder="Informações de plantas da ninha na lavoura"></textarea>
+                            <textarea id="plantasdaninha" name="plantas_daninha" rows="4" cols="50" class="form-control" placeholder="Informações de plantas daninha na lavoura" v-model="plantdaninhas"></textarea>
 
                             
                          
                             <br>
 
                             <label for="outrasinformacoes" class="txt"><b>Outras Informações:</b></label>
-                            <textarea id="outrasinformacoes" name="outras_informacoes" rows="4" cols="50" class="form-control" placeholder="Informações adicionais"></textarea>
+                            <textarea id="outrasinformacoes" name="outras_informacoes" rows="4" cols="50" class="form-control" placeholder="Informações adicionais" v-model="outrasinfo"></textarea>
 
                             <br>
 
@@ -159,48 +159,124 @@
             <br>
             <div class="add-img-box">
               <label id="teste" for="camera" class="add-img ">Adicionar Imagem</label>
-                            
-                         
-                            <input id="camera" type="file" for="camera" accept="image/*" @change="onChange" style="display: none;"/>
-  <div id="preview">
-    <img v-if="item.imageUrl" :src="item.imageUrl" />
-  </div>
-                          </div>
+            </div>
+
+                          
            
-            <div class="input-box">
+            <div class="input-box button-down">
               
               
             <button class="clean">Limpar</button>
 
-            <button class="save">Imprimir</button>
+           
+      
+            <button @click="printPage()" type="button" class="save">Imprimir</button>
 
+
+            <div id="preview" class="input-box">
+<form @submit.prevent="handleSubmit">
+      <div>
+        <input id="camera" capture="camera" type="file" accept="image/*"  multiple @change="handleFileUpload" style="display: none;">
+      </div>
+      <div v-for="(image, index) in images" :key="index" class="images-min">
+        <img :src="image.url" >
+        <p>{{ image.description }}</p>
+        <p>Latitude: {{ image.location.latitude }}</p>
+        <p>Longitude: {{ image.location.longitude }}</p>
+        <p>Data e hora atuais: {{ currentDateTime }}</p>
+        <textarea type="text" class="form-control" id="description-img-text" placeholder="Ex: PLantações de milho 400m2"   v-model="description"></textarea>
+      </div>
+
+    </form>
+
+
+            </div>
           </div>
           </form>
         </section>
 
         </main>
     </template>
-<script>
-export default {
-  name: 'imageUpload',
-  data() {
-    return {
-      item:{
-          //...
-          image : null,
-          imageUrl: null
+ <script>
+ export default{
+      data() {
+        return {
+          images: [],
+          description: '',
+          latitude: '',
+          longitude: '',
+          data: '',
+          latitude: '',
+          longitude: '',
+        };
+      },
+      mounted() {
+    this.getCurrentDateTime();
+    this.getGeoLocation();
+     },
+      methods: {
+
+
+    limparFormulario() {
+        this.nome = "";
+        this.email = "";
+        this.mensagem = "";
+    },
+
+
+        printPage() {
+        window.print();
+      },
+
+        getCurrentDateTime() {
+      const today = new Date();
+      const date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+      const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      this.currentDateTime = date+' '+time;
+      
+    },
+    getGeoLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          this.latitude = position.coords.latitude.toFixed(4);
+          this.longitude = position.coords.longitude.toFixed(4);
+        }, error => {
+          console.error(error);
+        });
+      } else {
+        console.error("Geolocation is not supported by this browser.");
       }
-    }
-  },
-  methods: {
-    onChange(e) {
-      const file = e.target.files[0]
-      this.image = file
-      this.item.imageUrl = URL.createObjectURL(file)
-    }
-  }
-} 
-</script>
+    },
+        handleFileUpload(event) {
+          const files = event.target.files;
+          for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const reader = new FileReader();
+            reader.onload = () => {
+              this.images.push({
+                url: reader.result,
+                description: this.description,
+                location: {
+                  latitude: this.latitude,
+                  longitude: this.longitude,
+                  currentDateTime: this.currentDateTime
+                },
+              });
+            };
+            reader.readAsDataURL(file);
+          }
+        },
+        handleSubmit() {
+          // aqui você pode enviar os dados para o servidor ou fazer outra ação
+          // como limpar o formulário
+          this.description = '';
+          this.latitude = '';
+          this.longitude = '';
+        },
+      },
+    } 
+ </script>
+
 
 
     <style scoped>
@@ -217,7 +293,26 @@ export default {
         
         
         }
-    
+
+     /*Preview Image*/
+    #preview img{
+      width: 100%;
+      height: 400px;
+      z-index: 1;
+      position: relative;
+    }
+    #description-img-text{
+      width: 70%;
+      height: 100px;
+      resize: vertical;
+    }
+    .images-min{
+      width: 100%;
+      height: 200px;
+      position: relative;
+      display: inline-table;
+      justify-content: space-between;
+    }
     .container {
       position: relative;
       max-width: 95%;
@@ -254,9 +349,13 @@ export default {
       border: 1px solid #ddd;
       border-radius: 6px;
       padding: 0 15px;
+      resize: vertical;
     }
     .input-box input:focus {
       box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    }
+    .button-down{
+      position: relative;
     }
     
     .form .column {
@@ -336,6 +435,8 @@ export default {
     .form button:hover {
       background: rgb(12, 11, 12);
     }
+
+
     /*Responsive*/
     @media screen and (max-width: 900px) {
       .form .column {

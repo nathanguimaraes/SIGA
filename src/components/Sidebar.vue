@@ -1,4 +1,5 @@
 <template>
+    <div class="loader">
 <body>
 	
 		<nav class="sidebar ">
@@ -114,6 +115,7 @@
 
 	
 </body>
+</div>
 </template>
 
 

@@ -220,7 +220,7 @@ body.dark .sidebar header .toggle{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow: scroll;
+    /*overflow: scroll;*/
     margin-top: -10px;
     
 }
@@ -316,6 +316,13 @@ body.dark .home .text{
     color: var(--text-color);
 }
 
+
+@media screen and (max-height: 740px){
+    .sidebar .menu-bar{
+        overflow: scroll;  
+      }
+
+}
 @media screen and (min-width: 340px) {
     .sidebar.close header .toggle {
         margin-left: 21px;
@@ -347,4 +354,5 @@ body.dark .home .text{
                         margin-left: 135px;
                         margin-top: 65px;
                       }
+
                     }                   
