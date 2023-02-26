@@ -132,28 +132,29 @@
                             <br>
 
 
-            <!----        <div class="input-box address">
+               <div class="input-box address">
               <label>Endereço</label>
               <input type="text" placeholder="Insira o Endereço" required />
               <input type="text" placeholder="Complemento" required />
               <div class="column">
-                <div class="select-box">
-                  <select>
+                 <select class="select-estado">
                     <option hidden>Estado</option>
+                    <option>Paraná</option>
                     <option>Amapa</option>
                     <option>Bahia</option>
                     <option>Maranhão</option>
-                    <option>Paraná</option>
+
+                    
                   </select>
-                </div>
+               
                 <input type="text" placeholder="Insira a Cidade" required />
               </div>
               <div class="column">
                 <input type="text" placeholder="Distrito" />
-                <input type="number" placeholder="Enter postal code" required />
+                <input type="text" placeholder="CEP" required />
               </div>
             </div>
-            -->
+          
             
             
             <br>
@@ -172,7 +173,9 @@
       
             <button @click="printPage()" type="button" class="save">Imprimir</button>
 
-
+              <div class="relatorio-fotografico">
+                <p>RELATÓRIO FOTOGRÁFICO</p>
+              </div>
             <div id="preview" class="input-box">
 <form @submit.prevent="handleSubmit">
       <div>
@@ -250,10 +253,10 @@
         handleFileUpload(event) {
           const files = event.target.files;
           for (let i = 0; i < files.length; i++) {
-            const file = files[i];
-            const reader = new FileReader();
-            reader.onload = () => {
-              this.images.push({
+            const file = files[i]; // vetor de imagens dentro do laço de repeticao
+            const reader = new FileReader();  //lendo novo arquivo
+            reader.onload = () => {   
+              this.images.push({              //imprimindo na tela imagem
                 url: reader.result,
                 description: this.description,
                 location: {
@@ -294,8 +297,18 @@
         
         }
 
+
+
+
      /*Preview Image*/
-    #preview img{
+     .relatorio-fotografico p{
+      font-size: 30px;
+     }
+    .relatorio-fotografico{
+      margin-top: 15%;
+    }
+    
+     #preview img{
       width: 100%;
       height: 400px;
       z-index: 1;
@@ -311,7 +324,7 @@
       height: 200px;
       position: relative;
       display: inline-table;
-      justify-content: space-between;
+      margin-top: 5%;
     }
     .container {
       position: relative;
@@ -338,7 +351,7 @@
     }
 
 
-    .form :where(.input-box input, .select-box, .cultura, .form-control) {
+    .form :where(.input-box input, .select-box, .select-estado, .cultura, .form-control) {
       position: relative;
       height: 50px;
       width: 100%;
@@ -369,7 +382,7 @@
     .form :where(.gender-option, .gender) {
       display: flex;
       align-items: center;
-      column-gap: 60px;
+      column-gap: 16%;
       flex-wrap: wrap;
     }
     .form .gender {
