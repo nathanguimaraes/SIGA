@@ -40,6 +40,15 @@ if(body.classList.contains("dark")){
 
  ////
 
+
+
+
+
+
+
+
+
+
  if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js');
 }

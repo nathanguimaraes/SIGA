@@ -9,16 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "vls": "^0.8.2",
+    "vscode-html-languageservice": "^5.0.3",
+    "vscode-uri": "^3.0.6",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",
-    "vls": "^0.8.2",
-		"vscode-html-languageservice": "^5.0.3",
-		"vscode-uri": "^3.0.6"
+    "vue2-google-maps": "^0.10.7"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
     "sass": "^1.57.1",
     "vite": "^4.0.0"
-    
   }
 }

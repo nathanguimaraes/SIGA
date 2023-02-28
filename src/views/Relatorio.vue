@@ -168,10 +168,15 @@
               
               
             <button class="clean">Limpar</button>
-
+                
            
       
             <button @click="printPage()" type="button" class="save">Imprimir</button>
+            
+            <p class="title-map">LOCALIZAÇÃO NO MAPA</p>
+
+            <div id="map"></div>
+
 
               <div class="relatorio-fotografico">
                 <p>RELATÓRIO FOTOGRÁFICO</p>
@@ -216,8 +221,22 @@
       mounted() {
     this.getCurrentDateTime();
     this.getGeoLocation();
+
+    
+ var map = L.map('map').setView([51.505, -0.09], 13);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+L.marker([51.5, -0.09]).addTo(map)
+    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+    .openPopup();
+
+
      },
       methods: {
+
 
 
     limparFormulario() {
@@ -298,7 +317,18 @@
         }
 
 
+        /* Map */
+        .title-map{
+          margin-top: 20%;
+          font-size: medium;
+        }
 
+        #map { 
+          margin-top: 5%;
+                height: 400px; 
+                width: 100%;
+                z-index: 1;
+        }
 
      /*Preview Image*/
      .relatorio-fotografico p{
