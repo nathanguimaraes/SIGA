@@ -178,15 +178,16 @@
             <div id="map"></div>
 
 
-              <div class="relatorio-fotografico">
-                <p>RELATÓRIO FOTOGRÁFICO</p>
-              </div>
+              
             <div id="preview" class="input-box">
 <form @submit.prevent="handleSubmit">
       <div>
         <input id="camera" capture="camera" type="file" accept="image/*"  multiple @change="handleFileUpload" style="display: none;">
       </div>
       <div v-for="(image, index) in images" :key="index" class="images-min">
+        <div class="relatorio-fotografico">
+                <p>RELATÓRIO FOTOGRÁFICO</p>
+              </div>
         <img :src="image.url" >
         <p>{{ image.description }}</p>
         <p>Latitude: {{ image.location.latitude }}</p>
@@ -222,19 +223,9 @@
     this.getCurrentDateTime();
     this.getGeoLocation();
 
-    
- var map = L.map('map').setView([51.505, -0.09], 13);
-
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-
-L.marker([51.5, -0.09]).addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-    .openPopup();
-
 
      },
+
       methods: {
 
 
@@ -262,6 +253,17 @@ L.marker([51.5, -0.09]).addTo(map)
         navigator.geolocation.getCurrentPosition(position => {
           this.latitude = position.coords.latitude.toFixed(4);
           this.longitude = position.coords.longitude.toFixed(4);
+
+              /*map */
+    var map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 15);    //variavel map  selecionando a div map que criada e estilizada html/css
+          // a latitude e a logitude serao passadas como paramentro dentro do array setView ([], x=> Zoom -> 13)
+          L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(map);
+
+          L.marker([position.coords.latitude, position.coords.longitude]).addTo(map)    // aqui é passsada as cordenadas 
+          .bindPopup('Você esta aqui.')
+            .openPopup();
         }, error => {
           console.error(error);
         });
@@ -335,7 +337,7 @@ L.marker([51.5, -0.09]).addTo(map)
       font-size: 30px;
      }
     .relatorio-fotografico{
-      margin-top: 15%;
+      margin-top: 10%;
     }
     
      #preview img{
@@ -354,7 +356,7 @@ L.marker([51.5, -0.09]).addTo(map)
       height: 200px;
       position: relative;
       display: inline-table;
-      margin-top: 5%;
+      margin-top: 1%;
     }
     .container {
       position: relative;
