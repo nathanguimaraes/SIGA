@@ -193,7 +193,7 @@
         <p>Latitude: {{ image.location.latitude }}</p>
         <p>Longitude: {{ image.location.longitude }}</p>
         <p>Data e hora atuais: {{ currentDateTime }}</p>
-        <textarea type="text" class="form-control" id="description-img-text" placeholder="Ex: PLantações de milho 400m2"   v-model="description"></textarea>
+        <textarea id="obs" class="form-control" style="width:100% ;" rows="4">{{image.description}}</textarea>
       </div>
 
     </form>
@@ -212,8 +212,6 @@
         return {
           images: [],
           description: '',
-          latitude: '',
-          longitude: '',
           data: '',
           latitude: '',
           longitude: '',
@@ -255,7 +253,7 @@
           this.longitude = position.coords.longitude.toFixed(4);
 
               /*map */
-    var map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 15);    //variavel map  selecionando a div map que criada e estilizada html/css
+    var map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 17);    //variavel map  selecionando a div map que criada e estilizada html/css
           // a latitude e a logitude serao passadas como paramentro dentro do array setView ([], x=> Zoom -> 13)
           L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -283,7 +281,7 @@
                 location: {
                   latitude: this.latitude,
                   longitude: this.longitude,
-                  currentDateTime: this.currentDateTime
+                  currentDateTime: this.currentDateTime    
                 },
               });
             };
