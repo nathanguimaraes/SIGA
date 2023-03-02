@@ -29,6 +29,10 @@ const router = createRouter({
         {
             path: '/imagens',
             component: () => import('../views/Imagens.vue')
+        },
+        {
+            path: '/notificacoes',
+            component: () => import('../views/Notificacoes.vue')
         }
     ]
 })

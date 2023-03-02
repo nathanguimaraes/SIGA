@@ -32,7 +32,7 @@
       padding: 40px;
       border-radius: 8px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-      margin: 25% auto auto auto;
+      margin: 2% auto auto auto;
     }
     .container header {
       font-size: 1.5rem;
